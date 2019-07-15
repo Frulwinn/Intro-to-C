@@ -9,8 +9,10 @@
 */
 int string_length(char *s)
 {
-
+    *s = 30;
+    printf(s);
 }
+
 
 /*
     Write a function that reverses the order of string s and outputs 
