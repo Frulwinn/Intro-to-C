@@ -9,8 +9,13 @@
 */
 int string_length(char *s)
 {
-    *s = 30;
-    printf(s);
+    //int length = *s;
+
+    while (*s != '\0') {
+        printf("Length of string: %d\n", *s);
+        s++;
+    }
+    return 0;
 }
 
 
@@ -22,7 +27,14 @@ int string_length(char *s)
 */
 char *reverse_string(char *rv, char *s)
 {
-
+    int length = string_length(s);
+    int i = 0;
+    for (int i = 0; length >= 0; i++){
+        length--;
+        rv[i] = s[length];
+    }
+    rv[i] = '\0';
+    return rv;
 }
 
 #ifndef TESTING
