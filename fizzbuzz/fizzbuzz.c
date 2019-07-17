@@ -11,9 +11,9 @@
 */
 int fizzbuzz(int n)
 {
-    n = 100;
+    int counter = 0;
     
-    for (int i = 1; i <= 100; i++) 
+    for (int i = 1; i <= n; i++) 
     {
         if ((i % 15 == 0))
             printf("%d FizzBuzz\n", i);
@@ -22,11 +22,11 @@ int fizzbuzz(int n)
         else if (i % 5 == 0)
             printf("%d Buzz\n", i);
         else 
-            printf("%d\n", i);
+            counter += 1;
         
     }
 
-    return 0;
+    return counter;
 }
 
 
