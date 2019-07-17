@@ -15,7 +15,13 @@
 */
 void string_copy(char *x, char *y)
 {
-
+    while(*y)
+    {
+        *x = *y;
+        x++;
+        y++;
+    }
+    *x = '\0';
 }
 
 /*
@@ -28,7 +34,14 @@ void string_copy(char *x, char *y)
 */
 char *find_char(char *str, char c)
 {
-
+    while (*str != '\0'){ 
+        if(*str == c){
+            return str;
+        }
+        str++;
+        }
+    return NULL;
+    
 }
 
 /*
@@ -41,7 +54,24 @@ char *find_char(char *str, char c)
 */
 char *find_string(char *haystack, char *needle)
 {
+    
+    while (*haystack){
 
+        char *start = haystack;
+        char *inside = needle;
+
+        while(*haystack && *inside && *haystack == *inside){
+            haystack++;
+            inside++;
+        }
+
+        if (!*inside){
+            return start;
+        }
+        haystack = start +1;
+        }
+    return NULL;
+    
 }
 
 #ifndef TESTING
